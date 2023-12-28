@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiProject.ViewModels"
+             xmlns:interfaces="clr-namespace:AddressBookShared.Interfaces;assembly=AddressBookShared"
+             x:DataType="{x:Type viewmodels:DetailsPageViewModel}"
+             Shell.NavBarIsVisible="False"
+             
+             x:Class="MauiProject.Pages.DetailsPage"
+             Title="Contact Details">
+
+
+    <ScrollView>
+        <Grid RowDefinitions="auto, *" Margin="20" HorizontalOptions="Center">
+            <Label Text="Contact Details" Margin="0,0,20,0" HorizontalOptions="Center" FontSize="30" />
+            <HorizontalStackLayout>
+                <VerticalStackLayout Grid.Row="1" Margin="0,60,100,50" HorizontalOptions="Center">
+                    <Label Text="{Binding SelectedContact.FirstName}" FontSize="Medium" Margin="0,0,0,0" />
+                    <Label Text="{Binding SelectedContact.LastName}" FontSize="Small" />
+                    <Label Text="{Binding SelectedContact.Email}" FontSize="Small" />
+                    <Label Text="{Binding SelectedContact.PhoneNumber}" FontSize="Small" />
+                    <Label Text="{Binding SelectedContact.StreetName}" FontSize="Small" />
+                    <Label Text="{Binding SelectedContact.StreetNumber}" FontSize="Small" />
+                    <Label Text="{Binding SelectedContact.PostalCode}" FontSize="Small" />
+                    <Label Text="{Binding SelectedContact.City}" FontSize="Small" />
+                    <Label Text="{Binding SelectedContact.Country}" FontSize="Small" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Row="1" Margin="50,50,0,50" HorizontalOptions="End" VerticalOptions="Center">
+                    <Button Command="{Binding NavigateToUpdateCommand}" Text="Update Contact" CommandParameter="{Binding SelectedContact}" Margin="50,0,0,10"/>
+                    <Button Command="{Binding RemoveContactFromListCommand}" Text="Delete Contact" CommandParameter="{Binding SelectedContact}" Margin="50,0,0,10"/>
+                    <Button Command="{Binding NavigateToMainCommand}" Text="Back To Address Book" Margin="50,0,0,0"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiProject.ViewModels"
+             x:DataType="{x:Type viewmodels:UpdatePageViewModel}"
+             Shell.NavBarIsVisible="False"
+             
+             x:Class="MauiProject.Pages.UpdatePage"
+             Title="UpdatePage">
+
+
+    <ScrollView>
+        <Grid ColumnDefinitions="*, auto" Margin="50" HorizontalOptions="Center">
+            <VerticalStackLayout Margin=" 20,10,0,0">
+                <Label Text="Update the Contact" Margin="0,0,0,10" FontSize="30" HorizontalOptions="Center"/>
+                <Frame>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center" Text="{Binding Contact.FirstName}" FontSize="Small"  />
+                        <Entry VerticalOptions="Center" Text="{Binding Contact.FirstName, Mode=TwoWay}" Margin="10,0,0,0"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame>
+                    <HorizontalStackLayout >
+                        <Label VerticalOptions="Center" Text="{Binding Contact.LastName}" FontSize="Small" Margin="0,0,10,0"/>
+                        <Entry VerticalOptions="Center" Text="{Binding Contact.LastName, Mode=TwoWay}" Margin="10,0,0,0"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center" Text="{Binding Contact.Email}" FontSize="Small" Margin="0,0,10,0" />
+                        <Entry VerticalOptions="Center" Text="{Binding Contact.Email, Mode=TwoWay}" Margin="10,0,0,0"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center" Text="{Binding Contact.PhoneNumber}" FontSize="Small" Margin="0,0,10,0" />
+                        <Entry VerticalOptions="Center" Text="{Binding Contact.PhoneNumber, Mode=TwoWay}" Margin="10,0,0,0"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+               
+                <Frame>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center" Text="{Binding  Contact.StreetName}" FontSize="Small" Margin="0,0,10,0" />
+                        <Entry VerticalOptions="Center" Text="{Binding Contact.StreetName, Mode=TwoWay}" Margin="10,0,0,0"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                
+                <Frame>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center" Text="{Binding Contact.StreetNumber}" FontSize="Small" Margin="0,0,10,0" />
+                        <Entry VerticalOptions="Center" Text="{Binding Contact.StreetNumber, Mode=TwoWay}" Margin="10,0,0,0"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center" Text="{Binding Contact.PostalCode}" FontSize="Small" Margin="0,0,10,0" />
+                        <Entry VerticalOptions="Center" Text="{Binding Contact.PostalCode, Mode=TwoWay}" Margin="10,0,0,0"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center" Text="{Binding Contact.City}" FontSize="Small" Margin="0,0,10,0" />
+                        <Entry VerticalOptions="Center" Text="{Binding Contact.City, Mode=TwoWay}" Margin="10,0,0,0"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center" Text="{Binding Contact.Country}" FontSize="Small" Margin="0,0,10,0" />
+                        <Entry VerticalOptions="Center" Text="{Binding Contact.Country, Mode=TwoWay}" Margin="10,0,0,0"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                
+                <Button Text="Save" Command="{Binding UpdateContactListCommand}" CommandParameter="{Binding Contact}" Margin="0,20,0,0"/>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

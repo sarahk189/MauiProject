@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiProject.Pages.UpdateContactPage"
+             Title="UpdateContact">
+    
+    <ScrollView>
+
+
+        <Grid RowDefinitions="auto, *" Margin="20">
+
+            <CollectionView Grid.Row="1" Margin="0,20,0,0" ItemsSource="{Binding ContactList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Type interfaces:IContact}">
+                        <Grid ColumnDefinitions="*, auto" Margin="0,0,0,15">
+                            <VerticalStackLayout>
+
+                                <Label Text="{Binding FirstName}" FontSize="15" Margin="0,20,0,0" />
+                                <Label Text="{Binding LastName}" FontSize="10" />
+                                <Label Text="{Binding Email}" FontSize="10" />
+                                <Label Text="{Binding PhoneNumber}" FontSize="10" />
+                                <Label Text="{Binding StreetName}" FontSize="10" />
+                                <Label Text="{Binding StreetNumber}" FontSize="10" />
+                                <Label Text="{Binding PostalCode}" FontSize="10" />
+                                <Label Text="{Binding City}" FontSize="10" />
+                                <Label Text="{Binding Country}" FontSize="10" />
+
+                            </VerticalStackLayout>
+
+
+                        </Grid>
+
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+
+
+    </ScrollView>
+</ContentPage>  

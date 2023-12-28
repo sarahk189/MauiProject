@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:AddressBookShared.Models;assembly=AddressBookShared"
+             xmlns:interfaces="clr-namespace:AddressBookShared.Interfaces;assembly=AddressBookShared"
+             xmlns:viewmodels="clr-namespace:MauiProject.ViewModels"
+             xmlns:pages="clr-namespace:MauiProject.Pages"
+             x:DataType="{x:Type viewmodels:AddressBookFormPageViewModel}"
+             Shell.NavBarIsVisible="False"
+             
+             x:Class="MauiProject.Pages.AddressBookFormPage"
+             Title="Address Book Form">
+
+    <ScrollView>
+        <Grid RowDefinitions="auto, *" Margin="60" >
+            <VerticalStackLayout Grid.Row="0" Margin="20">
+                <Label Text="Address Book Form" Margin="0,0,20,0" HorizontalOptions="Center" FontSize="30"/>
+                <Label Text="First Name" />
+                <Entry Text="{Binding Contact.FirstName}" Margin="0,5,0,10" />
+                <Label Text="Last Name"/>
+                <Entry Text="{Binding Contact.LastName}" Margin="0,5,0,10"/>
+                <Label Text="Email Address"/>
+                <Entry Text="{Binding Contact.Email}" Margin="0,5,0,10"/>
+                <Label Text="Phone Number"/>
+                <Entry Text="{Binding Contact.PhoneNumber}" Margin="0,5,0,10"/>
+                <Label Text="Street Name"/>
+                <Entry Text="{Binding Contact.StreetName}" Margin="0,5,0,10"/>
+                <Label Text="Street Number"/>
+                <Entry Text="{Binding Contact.StreetNumber}" Margin="0,5,0,10"/>
+                <Label Text="Postal Code"/>
+                <Entry Text="{Binding Contact.PostalCode}" Margin="0,5,0,10"/>
+                <Label Text="City"/>
+                <Entry Text="{Binding Contact.City}" Margin="0,5,0,10"/>
+                <Label Text="Country"/>
+                <Entry Text="{Binding Contact.Country}" Margin="0,5,0,10"/>
+
+
+                <Button Command="{Binding AddContactToListCommand}" Text="Add to List" Margin="0,20,0,20" Padding="0,10"/>
+                <Button Command="{Binding NavigateToMainCommand}" Text="Back To Address Book"/>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

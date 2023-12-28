@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiProject.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiProject"
+    xmlns:pages="clr-namespace:MauiProject.Pages"
+    
+    
+    
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="True"
+    Title="MauiProject">
+    
+  
+
+    <ShellContent Title="Address Book" Route="MainPage" ContentTemplate="{DataTemplate pages:MainPage}" />
+    <ShellContent Title="Address Book Form" Route="AddressBookForm" ContentTemplate="{DataTemplate pages:AddressBookFormPage}" />
+    <ShellContent Title="Details Page"  Route="DetailsPage" ContentTemplate="{DataTemplate pages:DetailsPage}" />
+    <ShellContent Title="Update Page"  Route="UpdatePage" ContentTemplate="{DataTemplate pages:UpdatePage}" />
+
+</Shell>
